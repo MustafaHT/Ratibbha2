@@ -2,12 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_logo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".splash.SplashActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/app_logo"
         android:layout_width="220dp"
         android:layout_height="220dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,7 +18,7 @@
         app:srcCompat="@drawable/ratibbhalogo1" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/touwaiq_logo"
         android:layout_width="164dp"
         android:layout_height="50dp"
         android:layout_marginBottom="4dp"
@@ -25,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/app_logo"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/tuwaiqlogo1" />
 
@@ -36,6 +37,6 @@
         android:layout_marginStart="128dp"
         android:text="Powered by"
         android:textSize="11sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView4"
+        app:layout_constraintBottom_toTopOf="@+id/touwaiq_logo"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
