@@ -45,7 +45,7 @@
 
 
     <EditText
-        android:id="@+id/register_username_edit_textview"
+        android:id="@+id/username_edit_textview_register"
         android:layout_width="379dp"
         android:layout_height="48dp"
         android:layout_marginLeft="40dp"
@@ -61,7 +61,7 @@
         app:layout_constraintVertical_bias="0.306" />
 
     <EditText
-        android:id="@+id/register_email_edit_textview"
+        android:id="@+id/email_edit_textview_register"
         android:layout_width="379dp"
         android:layout_height="48dp"
         android:layout_marginLeft="40dp"
@@ -73,11 +73,11 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_passward_edit_textview2"
+        app:layout_constraintTop_toBottomOf="@+id/passward_edit_textview_register"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/register_passward_edit_textview2"
+        android:id="@+id/passward_edit_textview_register"
         android:layout_width="379dp"
         android:layout_height="48dp"
         android:layout_marginLeft="40dp"
@@ -89,11 +89,11 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_username_edit_textview"
+        app:layout_constraintTop_toBottomOf="@+id/username_edit_textview_register"
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/register_button"
+        android:id="@+id/register_button_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="204dp"
@@ -103,6 +103,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_email_edit_textview"
+        app:layout_constraintTop_toBottomOf="@+id/email_edit_textview_register"
         app:layout_constraintVertical_bias="0.871" />
 </androidx.constraintlayout.widget.ConstraintLayout>
