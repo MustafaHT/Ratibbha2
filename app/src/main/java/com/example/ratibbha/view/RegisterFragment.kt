@@ -31,14 +31,23 @@ class RegisterFragment : Fragment() {
         val emailEditText: EditText? = view?.findViewById(R.id.email_edit_textview_register)
         val registerButton: Button? = view?.findViewById(R.id.register_button_register)
 
+        ///\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+//===========================================(Register Button Part)========================================================================
 
+// here we used setOnClickListener so whenever we Click on the button we will transfer back to the login fragment
         registerButton?.setOnClickListener {
             val username = userNameEditText?.text.toString()
             val email = emailEditText?.text.toString()
             val passward = passwardEditText?.text.toString()
 
-
+            // by using findNavController
             findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
         }
+// /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+// =============================================()============================================================
+
+
+
+
     }
 }

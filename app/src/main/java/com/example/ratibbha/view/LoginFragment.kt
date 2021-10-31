@@ -38,11 +38,10 @@ class LoginFragment : Fragment() {
             val username = userNameEditText?.text.toString()
             val passward = passwadEditText?.text.toString()
 
+            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
         }
 
         registerButton?.setOnClickListener {
-
-
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
 
