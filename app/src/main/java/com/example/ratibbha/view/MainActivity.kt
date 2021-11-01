@@ -3,6 +3,7 @@ package com.example.ratibbha.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.ratibbha.R
+import com.example.ratibbha.repositories.TaskRepository
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,6 +20,12 @@ class MainActivity : AppCompatActivity() {
         if (mainFragment == null){
 
         }
+
+        //
+        val taskRepository = TaskRepository(this)
+        //
+        TaskRepository.init(this)
+
 
 
     }

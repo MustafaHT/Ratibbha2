@@ -34,17 +34,17 @@ class LoginFragment : Fragment() {
 
 
         val userNameEditText: EditText? = view?.findViewById(R.id.username_edit_textview_login)
-        val passwadEditText: EditText? = view?.findViewById(R.id.passward_edit_textview_login)
+        val passwordEditText: EditText? = view?.findViewById(R.id.passward_edit_textview_login)
         val loginButton: Button? = view?.findViewById(R.id.signin_button_login)
         val registerButton: Button? = view?.findViewById(R.id.register_button_register)
 
 
         loginButton?.setOnClickListener {
             val username = userNameEditText?.text.toString()
-            val passward = passwadEditText?.text.toString()
+            val password = passwordEditText?.text.toString()
 
-
-            if (username.isEmpty() || passward.isEmpty()) {
+// condition to not transfer with out using the username or the the password
+            if (username.isEmpty() || password.isEmpty()) {
                 Toast.makeText(
                     context,
                     "Please Enter your password and your username",
@@ -52,7 +52,7 @@ class LoginFragment : Fragment() {
                 ).show()
 
             } else {
-                if (username.equals(sharedPreferences.getString("username", "")) && passward.equals(
+                if (username.equals(sharedPreferences.getString("username", "")) && password.equals(
                         sharedPreferences.getString("password", "")
                     )
                 ) {

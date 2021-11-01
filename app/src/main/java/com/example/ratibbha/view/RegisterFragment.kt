@@ -47,7 +47,7 @@ class RegisterFragment : Fragment() {
         editor = sharedPreferences.edit()
 
         val userNameEditText: EditText? = view?.findViewById(R.id.username_edit_textview_register)
-        val passwardEditText: EditText? = view?.findViewById(R.id.passward_edit_textview_register)
+        val passwordEditText: EditText? = view?.findViewById(R.id.passward_edit_textview_register)
         val emailEditText: EditText? = view?.findViewById(R.id.email_edit_textview_register)
         val registerButton: Button? = view?.findViewById(R.id.register_button_register)
 
@@ -58,7 +58,7 @@ class RegisterFragment : Fragment() {
         registerButton?.setOnClickListener {
             val username = userNameEditText?.text.toString()
             val email = emailEditText?.text.toString()
-            val password = passwardEditText?.text.toString()
+            val password = passwordEditText?.text.toString()
 
 
             editor.putString("username", username)
