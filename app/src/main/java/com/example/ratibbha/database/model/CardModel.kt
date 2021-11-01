@@ -8,6 +8,7 @@ import androidx.room.PrimaryKey
 data class CardModel(
     val title:String,
     val descreption:String,
+    val pickUpDay:Int,
     val timeFrom:Int,
     val timeTo:Int,
     val place:String,

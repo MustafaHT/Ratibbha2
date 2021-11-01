@@ -80,7 +80,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="20dp"
-        android:background="@color/blue"
+        android:background="@drawable/rec"
         android:rotation="45"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
