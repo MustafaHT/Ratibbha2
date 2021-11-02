@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+        <string-array name="taskType">
+            <item>Meeting</item>
+            <item>Appointment</item>
+            <item>Lecture</item>
+        </string-array>
+</resources>

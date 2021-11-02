@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray"
-    tools:context=".view.AddTaskFragment"
+    tools:context=".view.EditFragment"
     tools:ignore="DuplicateIds">
 
     <ScrollView
@@ -52,7 +52,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/title_edit_textview_add"
+                android:id="@+id/title_edit_textview_edit"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:background="@color/white"
@@ -74,7 +74,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
-                android:id="@+id/descreption_edit_textview_add"
+                android:id="@+id/descreption_edit_textview_edit"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:background="@color/white"
@@ -102,7 +102,7 @@
                 android:orientation="horizontal">
 
                 <ImageButton
-                    android:id="@+id/pickupaday_edit_imagebutton_textview_add"
+                    android:id="@+id/pickupaday_edit_imagebutton_textview_edit"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginLeft="160dp"
@@ -114,7 +114,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/calenderDate_TextView_add"
+                android:id="@+id/calenderDate_TextView_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -127,7 +127,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/timeFrom_Text_add"
+                    android:id="@+id/timeFrom_Text_edit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -147,7 +147,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/timeTo_Text_add"
+                    android:id="@+id/timeTo_Text_edit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -166,7 +166,7 @@
                 android:textColor="@color/black" />
 
             <Spinner
-                android:id="@+id/typeoftask_spinner_add"
+                android:id="@+id/typeoftask_spinner_edit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/white"
@@ -188,7 +188,7 @@
                 android:textColor="@color/black" />
 
             <Spinner
-                android:id="@+id/taskfor_spinner_add"
+                android:id="@+id/taskfor_spinner_edit"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="16dp"
@@ -207,7 +207,7 @@
                 android:textColor="@color/black" />
 
             <Spinner
-                android:id="@+id/place_spinner_add"
+                android:id="@+id/place_spinner_edit"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="16dp"
@@ -228,7 +228,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Spinner
-                android:id="@+id/howimportant_spinner_add"
+                android:id="@+id/howimportant_spinner_edit"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="16dp"
@@ -237,7 +237,7 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <Button
-                android:id="@+id/add_button_add"
+                android:id="@+id/add_button_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="130dp"

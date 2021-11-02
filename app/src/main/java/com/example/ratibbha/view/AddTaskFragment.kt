@@ -74,34 +74,56 @@ class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener,TimePicke
         val howImportantSpinner:Spinner = view.findViewById(R.id.howimportant_spinner_add)
         val addButton:Button = view.findViewById(R.id.add_button_add)
 
+        var typeOfTask = arrayOf("1","2","3")
 
-//        addButton.setOnClickListener {
-//            val title = titleEditText.text.toString()
-//            val descreption = descreptionEditText.text.toString()
-//            val calendarDate = CalendarDate.text.toString()
-//            val timeFrom = timeFromText.text.toString()
-//            val timeTo = timeToText.text.toString()
-//            val typeOfTask = listOf<String>("Meeting","Appointment","Discussion","Lecture")
-//            val taskFor = listOf<String>("Business","Studying","Family","You")
-//            val place = listOf<String>("Home","Restaurant","Hospital","Office")
-//            val howImportant = listOf<String>("High","Normal","")
+        typeOfTaskSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
 
-//
-//            taskViewModel.addTask(title,
-//                descreption,
-//                calendarDate,
-//                timeFrom,
-//                timeTo,
-//                typeOfTask,
-//                taskFor,
-//                place,
-//                howImportant)
-//
-//
-//            findNavController().popBackStack()
-//        }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+        }
+
+//==========================================(Add Button Part)============================================================
 
 
+        addButton.setOnClickListener {
+            val title = titleEditText.text.toString()
+            val descreption = descreptionEditText.text.toString()
+            val calendarDate = CalendarDate.text.toString()
+            val timeFrom = timeFromText.text.toString()
+            val timeTo = timeToText.text.toString()
+            val typeOfTask = listOf<String>("Meeting","Appointment","Lecture")
+            val taskFor = listOf<String>("Business","Studying","Family","You")
+            val place = listOf<String>("Home","Restaurant","Hospital","Office")
+            val howImportant = listOf<String>("High","Normal","")
+
+
+            taskViewModel.addTask(title,
+                descreption,
+                calendarDate,
+                timeFrom,
+                timeTo,
+                "Home",
+                false,
+                "High",
+                "You",
+                "Meeting"
+
+            )
+
+
+            findNavController().popBackStack()
+        }
+
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^(Add Button Part)^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
         // ======================== We Called The Function of The Used Calender ===================================
@@ -176,5 +198,5 @@ class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener,TimePicke
             savedMinute = minute
 
    }
-    // ==================================================(Date & Time Picker)=======================================================================
+    // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^(Date & Time Picker)^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 }

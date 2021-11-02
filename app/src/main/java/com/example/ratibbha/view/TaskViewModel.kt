@@ -19,9 +19,9 @@ class TaskViewModel: ViewModel() {
     fun addTask(
         title: String,
         descreption: String,
-        calenderDate: Int,
-        timeFrom: Int,
-        timeTo: Int,
+        calenderDate: String,
+        timeFrom: String,
+        timeTo: String,
         place: String,
         isDone: Boolean,
         howImportant:String,

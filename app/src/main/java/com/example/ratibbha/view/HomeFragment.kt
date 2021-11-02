@@ -43,9 +43,9 @@ class HomeFragment : Fragment() {
         taskRecyclerView.adapter = taskAdapter
 
         taskViewModel.taskElements.observe(viewLifecycleOwner, Observer {
-            it?.let { items ->
+            it?.let { tasks ->
                 taskList.clear()
-                taskList.addAll(items)
+                taskList.addAll(tasks)
                 taskAdapter.notifyDataSetChanged()
             }
         })

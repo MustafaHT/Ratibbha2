@@ -6,15 +6,15 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class CardModel(
-    val title:String,
-    val descreption:String,
-    val calenderDate:Int,
-    val timeFrom:Int,
-    val timeTo:Int,
-    val taskFor: String,
-    val typeofTask:String,
-    val howImportant:String,
-    val place: String,
+    var title:String,
+    var descreption:String,
+    var calenderDate: String,
+    var timeFrom: String,
+    var timeTo: String,
+    var taskFor: String,
+    var typeofTask:String,
+    var howImportant:String,
+    var place: String,
     var isDone:Boolean,
     @PrimaryKey(autoGenerate = true)
     val id:Int = 0,

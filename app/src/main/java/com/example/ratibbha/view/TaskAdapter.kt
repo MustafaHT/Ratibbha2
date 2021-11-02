@@ -20,7 +20,7 @@ class TaskAdapter(
 
     class TaskViewHolder(view: View): RecyclerView.ViewHolder(view){
 
-        val titleEditText: EditText = view.findViewById(R.id.task_title_textview_home)
+        val titleEditText: TextView = view.findViewById(R.id.task_title_textview_home)
         val descreptionEditText: TextView = view.findViewById(R.id.descreption_textview_home)
         val timeFromEditText:TextView = view.findViewById(R.id.timefrom_textview_home2)
         val timeToEditText:TextView = view.findViewById(R.id.timeto_textview_home)
@@ -50,7 +50,7 @@ class TaskAdapter(
 
 
         holder.itemView.setOnClickListener { view ->
-//            view.findNavController().navigate(R.id.)
+            view.findNavController().navigate(R.id.action_homeFragment_to_taskDetailsFragment)
         }
 
 
