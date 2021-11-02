@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Spinner
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ratibbha.R
 import com.example.ratibbha.database.model.CardModel
@@ -45,6 +46,11 @@ class TaskAdapter(
         holder.timeFromEditText.setText(task.timeFrom)
         holder.timeToEditText.setText(task.timeTo)
         holder.checkBox.isChecked = task.isDone
+
+
+        holder.itemView.setOnClickListener { view ->
+//            view.findNavController().navigate(R.id.)
+        }
 
     }
 

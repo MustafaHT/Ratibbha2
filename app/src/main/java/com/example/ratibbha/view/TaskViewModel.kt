@@ -13,9 +13,18 @@ class TaskViewModel: ViewModel() {
 
     var taskElements = taskRepository.getTasks()
 
-    fun addTask(title:String,descreption:String,pickUpDay:Int,timeFrom:Int,timeTo:Int,place:String,isDone:Boolean){
+    fun addTask(
+        title: String,
+        descreption: String,
+        calenderDate: Int,
+        timeFrom: Int,
+        timeTo: Int,
+        place: List<String>,
+        isDone: Boolean,
+    ){
         viewModelScope.launch {
-            taskRepository.addTask(CardModel(title,descreption,pickUpDay,timeFrom,timeTo,place,isDone))
+            taskRepository.addTask(CardModel(title,descreption,calenderDate,timeFrom,timeTo,
+                place.toString(),isDone))
         }
 
         fun updateTask(cardModel: CardModel){
