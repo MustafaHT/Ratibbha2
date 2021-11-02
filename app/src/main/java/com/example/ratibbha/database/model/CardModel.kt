@@ -11,7 +11,10 @@ data class CardModel(
     val calenderDate:Int,
     val timeFrom:Int,
     val timeTo:Int,
-    val place:String,
+    val taskFor: String,
+    val typeofTask:String,
+    val howImportant:String,
+    val place: String,
     var isDone:Boolean,
     @PrimaryKey(autoGenerate = true)
     val id:Int = 0,

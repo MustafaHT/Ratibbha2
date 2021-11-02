@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Spinner
+import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ratibbha.R
@@ -20,10 +21,10 @@ class TaskAdapter(
     class TaskViewHolder(view: View): RecyclerView.ViewHolder(view){
 
         val titleEditText: EditText = view.findViewById(R.id.task_title_textview_home)
-        val descreptionEditText: EditText = view.findViewById(R.id.descreption_textview_home)
-        val timeFromEditText:EditText = view.findViewById(R.id.timefrom_textview_home2)
-        val timeToEditText:EditText = view.findViewById(R.id.timeto_textview_home)
-        val checkBox:CheckBox = view.findViewById(R.id.checkBox_home)
+        val descreptionEditText: TextView = view.findViewById(R.id.descreption_textview_home)
+        val timeFromEditText:TextView = view.findViewById(R.id.timefrom_textview_home2)
+        val timeToEditText:TextView = view.findViewById(R.id.timeto_textview_home)
+        val isDone:CheckBox = view.findViewById(R.id.checkBox_home)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
@@ -45,11 +46,17 @@ class TaskAdapter(
         holder.descreptionEditText.setText(task.descreption)
         holder.timeFromEditText.setText(task.timeFrom)
         holder.timeToEditText.setText(task.timeTo)
-        holder.checkBox.isChecked = task.isDone
+        holder.isDone.isChecked = task.isDone
 
 
         holder.itemView.setOnClickListener { view ->
 //            view.findNavController().navigate(R.id.)
+        }
+
+
+        holder.isDone.setOnClickListener {
+            task.isDone = holder.isDone.isChecked
+            viewModel.updateTask(task)
         }
 
     }
