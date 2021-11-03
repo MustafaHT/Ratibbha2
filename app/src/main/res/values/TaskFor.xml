@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string-array name="TaskFor">
+        <item>Business</item>
+        <item>Family</item>
+        <item>You</item>
+    </string-array>
+
+    
+</resources>

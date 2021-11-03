@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.CheckBox
 import android.widget.ImageButton
 import android.widget.TextView
@@ -42,9 +43,11 @@ class TaskDetailsFragment : Fragment() {
         val taskForTextView:TextView = view.findViewById(R.id.taskFor_TextView_Details)
         val placeTextView: TextView = view.findViewById(R.id.place_TextView_Details)
         val howImportantTextView:TextView = view.findViewById(R.id.howImportant_TextView_Details)
-        val isDoneTextView:CheckBox = view.findViewById(R.id.isDone_TextView_Details)
+        val isDoneTextView:TextView = view.findViewById(R.id.isDone_TextView_Details)
         val deleteButton:ImageButton = view.findViewById(R.id.deleteButton_ImageButton_Details)
         val editButton:ImageButton = view.findViewById(R.id.editButton_ImageButton_Details)
+
+
 ///////////////////////////////////////////////////////////////////////////////////
         taskViewModel.selectedTaskMutableLiveData.observe(viewLifecycleOwner, Observer {
             it?.let { task ->
@@ -88,19 +91,19 @@ class TaskDetailsFragment : Fragment() {
         })
 
         editButton.setOnClickListener {
-            selectedTask.title = titleTextView.text.toString()
-            selectedTask.descreption = descreptionTextView.text.toString()
-            selectedTask.timeFrom = timeFromTextView.text.toString()
-            selectedTask.timeTo = timeToTextView.text.toString()
-            selectedTask.calenderDate = dueDateTextView.text.toString()
-            selectedTask.typeofTask = typeOfTaskTextView.text.toString()
-            selectedTask.taskFor = taskForTextView.text.toString()
-            selectedTask.place = placeTextView.text.toString()
-            selectedTask.howImportant = howImportantTextView.text.toString()
-            selectedTask.isDone = isDoneTextView.isChecked
-
-            taskViewModel.updateTask(selectedTask)
-            findNavController().navigate(R.id.)
+//            selectedTask.title = titleTextView.text.toString()
+//            selectedTask.descreption = descreptionTextView.text.toString()
+//            selectedTask.timeFrom = timeFromTextView.text.toString()
+//            selectedTask.timeTo = timeToTextView.text.toString()
+//            selectedTask.calenderDate = dueDateTextView.text.toString()
+//            selectedTask.typeofTask = typeOfTaskTextView.text.toString()
+//            selectedTask.taskFor = taskForTextView.text.toString()
+//            selectedTask.place = placeTextView.text.toString()
+//            selectedTask.howImportant = howImportantTextView.text.toString()
+//            selectedTask.isDone = isDoneTextView.text.toString().toBoolean()
+//
+//            taskViewModel.updateTask(selectedTask)
+            findNavController().navigate(R.id.action_taskDetailsFragment_to_editFragment)
         }
 ////////////////////////////////////////////////////////////////////
 

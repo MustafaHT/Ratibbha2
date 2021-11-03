@@ -172,6 +172,7 @@
                 android:backgroundTint="@color/white"
                 android:entries="@array/taskType"
                 android:isScrollContainer="true"
+                android:minHeight="48dp"
                 android:spinnerMode="dropdown"
                 app:layout_constraintBottom_toTopOf="@+id/textView10"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -189,12 +190,15 @@
 
             <Spinner
                 android:id="@+id/taskfor_spinner_add"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="240dp"
-                android:backgroundTint="@color/black"
-                tools:ignore="SpeakableTextPresentCheck" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:entries="@array/TaskFor"
+                android:isScrollContainer="true"
+                android:spinnerMode="dropdown"
+                app:layout_constraintBottom_toTopOf="@+id/textView10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/textView24"

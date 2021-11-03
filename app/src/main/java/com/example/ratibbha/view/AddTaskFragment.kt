@@ -3,12 +3,15 @@ package com.example.ratibbha.view
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Context
+import android.icu.text.SimpleDateFormat
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.ratibbha.R
@@ -74,9 +77,24 @@ class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener,TimePicke
         val howImportantSpinner:Spinner = view.findViewById(R.id.howimportant_spinner_add)
         val addButton:Button = view.findViewById(R.id.add_button_add)
 
-        var typeOfTask = arrayOf("1","2","3")
+
 
         typeOfTaskSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+        }
+
+        taskForSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(
                 parent: AdapterView<*>?,
                 view: View?,
@@ -101,9 +119,9 @@ class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener,TimePicke
             val timeFrom = timeFromText.text.toString()
             val timeTo = timeToText.text.toString()
             val typeOfTask = listOf<String>("Meeting","Appointment","Lecture")
-            val taskFor = listOf<String>("Business","Studying","Family","You")
+            val taskFor = listOf<String>("Business","Family","You")
             val place = listOf<String>("Home","Restaurant","Hospital","Office")
-            val howImportant = listOf<String>("High","Normal","")
+            val howImportant = listOf<String>("High","Normal","low")
 
 
             taskViewModel.addTask(title,
@@ -155,6 +173,7 @@ class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener,TimePicke
     }
 }
 // For Time Dialog
+        @RequiresApi(Build.VERSION_CODES.N)
         override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
             savedDay = dayOfMonth
             savedMonth = month
@@ -163,17 +182,22 @@ class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener,TimePicke
                 cal.set(Calendar.HOUR_OF_DAY, hour)
                 cal.set(Calendar.MINUTE, minute)
 
+                CalendarDate.text = "$savedDay/$savedMonth/$savedYear"
+
+
+
             // here is our first time picker
             }
-            val timeTo = TimePickerDialog(
+             TimePickerDialog(
                 context,
                 timeSetListener,
                 cal.get(Calendar.HOUR_OF_DAY),
                 cal.get(Calendar.MINUTE),
                 true
             ).show()
-//                timeFromText.text = SimpleDateFormat("HH:mm").format(cal.time)
+                timeToText.text = SimpleDateFormat("HH:mm").format(cal.time)
 //    Log.d("second",timeFromText.text.toString())
+//    timeToText.text = "$hour:$minute"
 
 
     // here to make another time picker we need to make time picker dialog inside a time picker --> like anonymous function **
@@ -188,6 +212,7 @@ class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener,TimePicke
     ).show()
 //    timeToText.text = SimpleDateFormat("HH:mm").format(cal.time)
 //    Log.d("first",timeToText.text.toString())
+    timeFromText.text = "$savedHour:$savedMinute"
         }
 
 
@@ -196,6 +221,8 @@ class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener,TimePicke
         override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
             savedHour = hourOfDay
             savedMinute = minute
+
+
 
    }
     // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^(Date & Time Picker)^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
