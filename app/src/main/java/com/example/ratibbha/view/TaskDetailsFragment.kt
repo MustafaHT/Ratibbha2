@@ -1,5 +1,6 @@
 package com.example.ratibbha.view
 
+import android.graphics.Color.red
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -46,6 +47,15 @@ class TaskDetailsFragment : Fragment() {
         val isDoneTextView:TextView = view.findViewById(R.id.isDone_TextView_Details)
         val deleteButton:ImageButton = view.findViewById(R.id.deleteButton_ImageButton_Details)
         val editButton:ImageButton = view.findViewById(R.id.editButton_ImageButton_Details)
+/////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
 
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -63,6 +73,15 @@ class TaskDetailsFragment : Fragment() {
                 howImportantTextView.text = task.howImportant
                 isDoneTextView.text = task.isDone.toString()
                 selectedTask = task
+
+
+                if(task.isDone){
+                    isDoneTextView.setTextColor(resources.getColor(R.color.green55))
+                    isDoneTextView.text = "Done"
+                }else{
+                    isDoneTextView.setTextColor(resources.getColor(R.color.red))
+                    isDoneTextView.text = "Not Done"
+                }
             }
         })
 
@@ -91,18 +110,7 @@ class TaskDetailsFragment : Fragment() {
         })
 
         editButton.setOnClickListener {
-//            selectedTask.title = titleTextView.text.toString()
-//            selectedTask.descreption = descreptionTextView.text.toString()
-//            selectedTask.timeFrom = timeFromTextView.text.toString()
-//            selectedTask.timeTo = timeToTextView.text.toString()
-//            selectedTask.calenderDate = dueDateTextView.text.toString()
-//            selectedTask.typeofTask = typeOfTaskTextView.text.toString()
-//            selectedTask.taskFor = taskForTextView.text.toString()
-//            selectedTask.place = placeTextView.text.toString()
-//            selectedTask.howImportant = howImportantTextView.text.toString()
-//            selectedTask.isDone = isDoneTextView.text.toString().toBoolean()
-//
-//            taskViewModel.updateTask(selectedTask)
+
             findNavController().navigate(R.id.action_taskDetailsFragment_to_editFragment)
         }
 ////////////////////////////////////////////////////////////////////

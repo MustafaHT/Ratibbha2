@@ -16,4 +16,8 @@
     <color name="greenS">#1B8840</color>
     <color name="blue">#005CB0</color>
     <color name="dark_gray">#671A1A1A</color>
+    <color name="light_gray">#808F8F8F</color>
+    <color name="light_green">#42078D00</color>
+    <color name="red">#DA0000</color>
+    <color name="green55">#19A800</color>
 </resources>

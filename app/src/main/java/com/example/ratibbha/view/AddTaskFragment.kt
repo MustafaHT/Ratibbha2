@@ -7,6 +7,7 @@ import android.icu.text.SimpleDateFormat
 import android.icu.util.ULocale
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -26,8 +27,8 @@ class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener {
 
     //==================================== variables used for the Calender =============================================
     lateinit var addDateAndTime:ImageButton
-    lateinit var CalendarDate: TextView
     lateinit var timeFromText:TextView
+    lateinit var calenderDateTextView:TextView
     lateinit var timeToText:TextView
 
     var savedDay = 0
@@ -49,8 +50,15 @@ class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener {
     //====================================
     var timeTo = ""
     var timeFrom = ""
+
+
+    var calenderDate = ""
     //====================================
-    var currentDay = "$day/$month/$year"
+
+    @RequiresApi(Build.VERSION_CODES.N)
+    val sdf = SimpleDateFormat("dd/MM/yyyy")
+    @RequiresApi(Build.VERSION_CODES.N)
+    var currentDay = sdf.format(Date())
 
 
 //    var CurrentTime = "$hour:$minute"
@@ -67,12 +75,13 @@ class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener {
         return inflater.inflate(R.layout.fragment_add_task, container, false)
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //=====================================================***************==============================
                             // these elements declared for ''Calender'' -->> Inside addTaskFragment
         addDateAndTime= view.findViewById(R.id.pickupaday_edit_imagebutton_textview_add)
-        CalendarDate = view.findViewById(R.id.calenderDate_TextView_add)
+        calenderDateTextView = view.findViewById(R.id.calenderDate_TextView_add)
         timeToText = view.findViewById(R.id.timeTo_Text_add)
         timeFromText = view.findViewById(R.id.timeFrom_Text_add)
         //=====================================================***************=================================
@@ -88,35 +97,7 @@ class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener {
 
 
 
-        typeOfTaskSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
 
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-
-            }
-        }
-
-        taskForSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-
-            }
-        }
 
 //==========================================(Add Button Part)============================================================
 
@@ -124,9 +105,10 @@ class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener {
         addButton.setOnClickListener {
             val title = titleEditText.text.toString()
             val descreption = descreptionEditText.text.toString()
-            val calendarDate = CalendarDate.text.toString()
+            val calendarDate = calenderDateTextView.text.toString()
             val timeFrom = timeFromText.text.toString()
             val timeTo = timeToText.text.toString()
+
 
 
 
@@ -142,6 +124,8 @@ class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener {
                 taskForSpinner.selectedItem.toString(),
                 typeOfTaskSpinner.selectedItem.toString()
             )
+
+
 
 
             findNavController().popBackStack()
@@ -165,7 +149,10 @@ class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener {
 
     }
     // =======================================(listener must listen to 'this' and context must be passed to the main activity)========================================
-     fun pickDate() {
+
+
+    @RequiresApi(Build.VERSION_CODES.N)
+    fun pickDate(context: Context) {
          addDateAndTime.setOnClickListener {
         getDateTimeCalender()
         DatePickerDialog(
@@ -178,18 +165,17 @@ class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener {
 
 
 
-
-
-
-
     }
 }
+
 // For Time Dialog
         @RequiresApi(Build.VERSION_CODES.N)
         override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
             savedDay = dayOfMonth
             savedMonth = month
             savedYear = year
+    calenderDate = "$savedDay/$savedMonth/$savedYear"
+    calenderDateTextView.text = calenderDate
             val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
 
 
