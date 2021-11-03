@@ -121,20 +121,20 @@ class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener,TimePicke
             val typeOfTask = listOf<String>("Meeting","Appointment","Lecture")
             val taskFor = listOf<String>("Business","Family","You")
             val place = listOf<String>("Home","Restaurant","Hospital","Office")
-            val howImportant = listOf<String>("High","Normal","low")
+            val howImportant = listOf<String>("High","Normal","Low")
 
 
-            taskViewModel.addTask(title,
+            taskViewModel.addTask(
+                title,
                 descreption,
                 calendarDate,
                 timeFrom,
                 timeTo,
-                "Home",
+                place.toString(),
                 false,
-                "High",
-                "You",
-                "Meeting"
-
+                howImportant.toString(),
+                taskFor.toString(),
+                typeOfTask.toString()
             )
 
 

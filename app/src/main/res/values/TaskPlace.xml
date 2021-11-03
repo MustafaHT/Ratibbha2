@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-
+    <string-array name="TaskPlace">
+        <item>Home</item>
+        <item>Restaurant</item>
+        <item>Hospital</item>
+        <item>Office</item>
+    </string-array>
 
 </resources>
