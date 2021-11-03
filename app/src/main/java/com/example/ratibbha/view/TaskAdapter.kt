@@ -12,6 +12,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.ratibbha.R
 import com.example.ratibbha.database.model.CardModel
 import org.w3c.dom.Text
+import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.LocalDateTime
 import java.util.*
 
 class TaskAdapter(
@@ -38,8 +41,13 @@ class TaskAdapter(
         val textPlace:TextView = view.findViewById(R.id.textView5)
         val textPlaceEdiTextView: TextView = view.findViewById(R.id.place_textview_home)
         val completedTextView:TextView = view.findViewById(R.id.compleated_textview)
+        val dueTimeTextView:TextView = view.findViewById(R.id.dueTime_textView)
+        val dueDateTextView:TextView = view.findViewById(R.id.dueDate_textView)
 
 
+        val currentTime = Calendar.getInstance().time
+        val simpleFormat = SimpleDateFormat("dd/MM/yyyy")
+        val currentDate = simpleFormat.format(Date())
 
     }
 
@@ -122,8 +130,17 @@ class TaskAdapter(
 
         //===================================================================================
 
-
-
+        if(task.timeTo < holder.currentTime.toString()){
+            holder.dueTimeTextView.text = "Time off"
+            if(task.calenderDate < holder.currentDate){
+                holder.dueDateTextView.text = "Overdue"
+            }else{
+                holder.dueDateTextView.text = ""
+            }
+        }else{
+            holder.dueTimeTextView.text = ""
+        }
+        //====================================================================================
 
 
     }
