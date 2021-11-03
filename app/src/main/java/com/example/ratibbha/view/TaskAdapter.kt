@@ -66,6 +66,7 @@ class TaskAdapter(
         holder.timeToEditText.setText(task.timeTo)
         holder.DuedateCalender.setText(task.calenderDate)
         holder.isDone.isChecked = task.isDone
+        holder.textPlaceEdiTextView.text = task.place
 
 
 
@@ -112,10 +113,17 @@ class TaskAdapter(
 
 
         if(task.howImportant == "High" ){
-            holder.cardView.setBackgroundColor(R.drawable.cardcolorhigh)
+            holder.cardView.setBackgroundResource(R.drawable.cardcolorhigh)
         }else if(task.howImportant  == "Normal"){
-            holder.cardView.setBackgroundColor(R.drawable.cardcolornormal)
+            holder.cardView.setBackgroundResource(R.drawable.cardcolornormal)
+        }else{
+            holder.cardView.setBackgroundResource(R.drawable.cardcolorlow)
         }
+
+        //===================================================================================
+
+
+
 
 
     }
