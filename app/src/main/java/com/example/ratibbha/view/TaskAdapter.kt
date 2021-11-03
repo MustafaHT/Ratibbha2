@@ -11,11 +11,12 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ratibbha.R
 import com.example.ratibbha.database.model.CardModel
+import org.w3c.dom.Text
+import java.util.*
 
 class TaskAdapter(
     val tasks: List<CardModel>, val viewModel: TaskViewModel):
     RecyclerView.Adapter<TaskAdapter.TaskViewHolder>(){
-
 
 
     class TaskViewHolder(view: View): RecyclerView.ViewHolder(view){
@@ -24,6 +25,7 @@ class TaskAdapter(
         val descreptionEditText: TextView = view.findViewById(R.id.descreption_textview_home)
         val timeFromEditText:TextView = view.findViewById(R.id.timefrom_textview_home2)
         val timeToEditText:TextView = view.findViewById(R.id.timeto_textview_home)
+        val DuedateCalender:TextView = view.findViewById(R.id.dat_Calender)
         val isDone:CheckBox = view.findViewById(R.id.checkBox_home)
     }
 
@@ -46,11 +48,15 @@ class TaskAdapter(
         holder.descreptionEditText.setText(task.descreption)
         holder.timeFromEditText.setText(task.timeFrom)
         holder.timeToEditText.setText(task.timeTo)
+        holder.DuedateCalender.setText(task.calenderDate)
         holder.isDone.isChecked = task.isDone
+
+
 
 
         holder.itemView.setOnClickListener { view ->
             view.findNavController().navigate(R.id.action_homeFragment_to_taskDetailsFragment)
+            viewModel.selectedTaskMutableLiveData.postValue(task)
         }
 
 

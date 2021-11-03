@@ -4,6 +4,7 @@ import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Context
 import android.icu.text.SimpleDateFormat
+import android.icu.util.ULocale
 import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -19,7 +20,7 @@ import java.util.*
 
 
 // DatePickerDialog.OnDateSetListener,TimePickerDialog.OnTimeSetListener =======>>> used to implement time ((onDateSet & onTimeSet))
-class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener,TimePickerDialog.OnTimeSetListener {
+class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener {
 
 
 
@@ -38,13 +39,21 @@ class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener,TimePicke
     val cal: Calendar = Calendar.getInstance()
 
     var day = cal.get(Calendar.DAY_OF_MONTH)
-
     var month = cal.get(Calendar.MONTH)
     var year = cal.get(Calendar.YEAR)
+
     var hour = cal.get(Calendar.HOUR)
     var minute = cal.get(Calendar.MINUTE)
 
-    var CurrentTime = "$hour:$minute"
+
+    //====================================
+    var timeTo = ""
+    var timeFrom = ""
+    //====================================
+    var currentDay = "$day/$month/$year"
+
+
+//    var CurrentTime = "$hour:$minute"
 //==================================== variables used for the Calender =============================================
 
 
@@ -118,10 +127,7 @@ class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener,TimePicke
             val calendarDate = CalendarDate.text.toString()
             val timeFrom = timeFromText.text.toString()
             val timeTo = timeToText.text.toString()
-            val typeOfTask = listOf<String>("Meeting","Appointment","Lecture")
-            val taskFor = listOf<String>("Business","Family","You")
-            val place = listOf<String>("Home","Restaurant","Hospital","Office")
-            val howImportant = listOf<String>("High","Normal","Low")
+
 
 
             taskViewModel.addTask(
@@ -130,11 +136,11 @@ class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener,TimePicke
                 calendarDate,
                 timeFrom,
                 timeTo,
-                place.toString(),
+                placeSpinner.selectedItem.toString(),
                 false,
-                howImportant.toString(),
-                taskFor.toString(),
-                typeOfTask.toString()
+                howImportantSpinner.selectedItem.toString(),
+                taskForSpinner.selectedItem.toString(),
+                typeOfTaskSpinner.selectedItem.toString()
             )
 
 
@@ -159,7 +165,7 @@ class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener,TimePicke
 
     }
     // =======================================(listener must listen to 'this' and context must be passed to the main activity)========================================
-     fun pickDate(context: Context) {
+     fun pickDate() {
          addDateAndTime.setOnClickListener {
         getDateTimeCalender()
         DatePickerDialog(
@@ -170,6 +176,12 @@ class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener,TimePicke
             day
         ).show()
 
+
+
+
+
+
+
     }
 }
 // For Time Dialog
@@ -179,51 +191,57 @@ class AddTaskFragment : Fragment(), DatePickerDialog.OnDateSetListener,TimePicke
             savedMonth = month
             savedYear = year
             val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
-                cal.set(Calendar.HOUR_OF_DAY, hour)
-                cal.set(Calendar.MINUTE, minute)
-
-                CalendarDate.text = "$savedDay/$savedMonth/$savedYear"
 
 
+                timeTo = "$hour:$minute"
+                timeToText.text = timeTo
 
             // here is our first time picker
             }
-             TimePickerDialog(
+             val timeToTimePicker =TimePickerDialog(
                 context,
                 timeSetListener,
                 cal.get(Calendar.HOUR_OF_DAY),
                 cal.get(Calendar.MINUTE),
                 true
             ).show()
-                timeToText.text = SimpleDateFormat("HH:mm").format(cal.time)
+
 //    Log.d("second",timeFromText.text.toString())
 //    timeToText.text = "$hour:$minute"
 
 
     // here to make another time picker we need to make time picker dialog inside a time picker --> like anonymous function **
+
+    //=============================================================()=============================================================================
+
+
+
+
     val timeFrom = TimePickerDialog(
         context,
-        TimePickerDialog.OnTimeSetListener{timePicker,hour,minute ->
-            cal.set(Calendar.HOUR_OF_DAY,hour)
-            cal.set(Calendar.MINUTE,minute) },
+        {
+        timepicker, hour, minute ->
+/// ====================================================================
+            timeFrom = "$hour:$minute"
+            timeFromText.text = timeFrom
+/// =====================================================================
+        },
         cal.get(Calendar.HOUR_OF_DAY),
         cal.get(Calendar.MINUTE),
         true
     ).show()
-//    timeToText.text = SimpleDateFormat("HH:mm").format(cal.time)
 //    Log.d("first",timeToText.text.toString())
-    timeFromText.text = "$savedHour:$savedMinute"
+
         }
 
+/*     *NOTE:*
+* use github commits to see the differences
+*
+*
+*
+*
+* */
 
 
-
-        override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
-            savedHour = hourOfDay
-            savedMinute = minute
-
-
-
-   }
     // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^(Date & Time Picker)^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 }
