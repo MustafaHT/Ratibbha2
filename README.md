@@ -37,6 +37,7 @@ than the requirements that were needed.
 Then, as I finished sketching, I started my work with Figma till I got the last and simplest shape. After that, started designing with Android studio where it was a motch way harder than Figma, so I've spent more than three nights working on the ideas and design, where the rest of the five nights has been spent in coding. Which I consider it as the biggest mistake during the project process. Because, whether it was a good look or not the user will not care about the design if the app satisfies his needs. 
 
 Later on, during the coding process, I've faced a lot of difficulties such as adding the Calendar and Time dialogue so it can appears with at the same button, so it can ask the user to enter the day that he wants to start his task on, including the startTime and endTime which I used google to help deal with. In addition, dealing with logical errors. 
+
 ======================  List unsolved problems   ========================>>
 
 one of the problems that faced was that the length of the topic as I wanted to manage the length of the topic the user can enter. Another one was when some registers a new account, I want to avoid user information conflict so that the information of the user stays safe. One more unsolved problem was that the app was working perfectly for the due date. However, when testing it late, I found an issue with that I could not solve which shows the importance of early testing of the app.
