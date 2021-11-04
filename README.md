@@ -22,13 +22,13 @@ Ratibbha is a to-do list application that is used to help us to sort and arrange
 
 =======================  User Stroies  =======================>>
 
-As Ratibbha user I want to add task so that I can see the upcoming tasks
-As Ratibbha user I want to be able to delete tasks if there are no longer needed so that user knows his tasks
-As Ratibbha user I want to be able to edite tasks so that the user can update his tasks
-As Ratibbha user I want to be able to have my cards in different colors based on the importance so that the user knows his importance
-As Ratibbha user I want to to be able to see sign of completion so that the user know the tasks he/she finished
-As Ratibbha user I want to be able to see a writing that tells me when the time is off so that the user knows his/her deadline timee.
-As Ratibbha user I want TO be able to have login and password to protect my information so that I can have privacy
+- As Ratibbha user I want to add task so that I can see the upcoming tasks
+- As Ratibbha user I want to be able to delete tasks if there are no longer needed so that user knows his tasks
+- As Ratibbha user I want to be able to edite tasks so that the user can update his tasks
+- As Ratibbha user I want to be able to have my cards in different colors based on the importance so that the user knows his importance
+- As Ratibbha user I want to to be able to see sign of completion so that the user know the tasks he/she finished
+- As Ratibbha user I want to be able to see a writing that tells me when the time is off so that the user knows his/her deadline timee.
+- As Ratibbha user I want TO be able to have login and password to protect my information so that I can have privacy
 
 ====================== my development process ========================>>
 
