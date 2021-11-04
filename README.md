@@ -32,11 +32,11 @@ As Ratibbha user I want TO be able to have login and password to protect my info
 
 ====================== my development process ========================>>
 
-In the beginning, I've started to think of how the app will going to look like. For that reason, I began with sketching up my design by adding and removing features.
+In the beginning, I've started to think of how the app going to look like. For that reason, I began with sketching up my design by adding and removing features.
 Next, I've decided to make a brainstorm for getting new ideas from other people on social media, which was really helpful to me and opened my mind to new other ideas more
-than the requirements that were needed.
+than the requirements needed.
 
-Then, as I finished sketching, I started my work with Figma till I got the last and simplest shape. After that, started designing with Android studio where it was a motch way harder than Figma, so I've spent more than three nights working on the ideas and design, where the rest of the five nights has been spent in coding. Which I consider it as the biggest mistake during the project process. Because, whether it was a good look or not the user will not care about the design if the app satisfies his needs. 
+Then, as I finished sketching, I started my work with Figma till I got the last and simplest shape. After that, started designing with Android studio where it was a much way harder than Figma, so I've spent more than three nights working on the ideas and design, where the rest of the five nights has been spent in coding. Which I consider it as the biggest mistake during the project process. Because, whether it was a good look or not the user will not care about the design if the app satisfies his needs. 
 
 Later on, during the coding process, I've faced a lot of difficulties such as adding the Calendar and Time dialogue so it can appears with at the same button, so it can ask the user to enter the day that he wants to start his task on, including the startTime and endTime which I used google to help deal with. In addition, dealing with logical errors. 
 
