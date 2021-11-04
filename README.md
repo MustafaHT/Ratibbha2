@@ -44,6 +44,11 @@ Later on, during the coding process, I've faced a lot of difficulties such as ad
 
 one of the problems that faced was that the length of the topic as I wanted to manage the length of the topic the user can enter. Another one was when some registers a new account, I want to avoid user information conflict so that the information of the user stays safe. One more unsolved problem was that the app was working perfectly for the due date. However, when testing it late, I found an issue with that I could not solve which shows the importance of early testing of the app.
 
+======================  Upcoming   ========================>>
+
+- Notification
+- Google Map
+
 ====================== functions work ========================>>
 
 ![splash android](https://user-images.githubusercontent.com/91452250/140261637-95f09d23-5642-4f42-a6a2-ab35c41aaca9.PNG)
