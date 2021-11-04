@@ -29,8 +29,21 @@ In the beginning, I've started to think of how the app will going to look like. 
 Next, I've decided to make a brainstorm for getting new ideas from other people on social media, which was really helpful to me and opened my mind to new other ideas more
 than the requirements that were needed.
 
-Then, as I finished sketching, I started my work with Figma till I got the last and simplest shape. After that, started designing with Android studio where it was a motch way harder than Figma, so I've spent more than three nights working on the ideas and design, where the rest of the 5 nights has been spent in coding. Which I consider it as my biggest mistake during the project process. Because, whether it was a good look or not the user will not care about the design if the app satisfies his needs. 
+Then, as I finished sketching, I started my work with Figma till I got the last and simplest shape. After that, started designing with Android studio where it was a motch way harder than Figma, so I've spent more than three nights working on the ideas and design, where the rest of the five nights has been spent in coding. Which I consider it as the biggest mistake during the project process. Because, whether it was a good look or not the user will not care about the design if the app satisfies his needs. 
+
+Later on, during the coding process, I've faced a lot of difficulties such as adding the Calendar and Time dialogue so it can appears with at the same button, so it can ask the user to enter the day that he wants to start his task on, including the startTime and endTime which I used google to help deal with. In addition, dealing with logical errors. 
+
+====================== functions work ========================>>
+
+![splash android](https://user-images.githubusercontent.com/91452250/140261637-95f09d23-5642-4f42-a6a2-ab35c41aaca9.PNG)
+![login android](https://user-images.githubusercontent.com/91452250/140261654-284893f0-9478-4c83-bc6b-b9bffdad84ba.PNG)
+![register android](https://user-images.githubusercontent.com/91452250/140261656-c5715050-e8b5-4a5f-9a1c-ccc3c5b5ad5b.PNG)
+![home android](https://user-images.githubusercontent.com/91452250/140262414-5ffd16a6-7f7d-4e32-92a0-b915e48c9962.PNG)
+![add android 1](https://user-images.githubusercontent.com/91452250/140262435-5c65397f-9ed3-4dc3-a270-5a8a7cf55fbc.PNG)
+![add android 2](https://user-images.githubusercontent.com/91452250/140262444-b96ad9c7-3515-4a31-87a6-62daa029017c.PNG)
+![Calender android](https://user-images.githubusercontent.com/91452250/140262468-cf0294d8-436b-451f-912e-08ca1c3201d0.PNG)
+![startTime](https://user-images.githubusercontent.com/91452250/140262486-bbe6a23e-ed6d-48e9-9676-ca57da5184dd.PNG)
+![endTime](https://user-images.githubusercontent.com/91452250/140262503-e842cf68-ce81-4a17-8c1d-afaabf36da73.PNG)
+![card details android](https://user-images.githubusercontent.com/91452250/140262513-f9c0ee44-845f-4f3f-8282-aa69af62f75f.PNG)
 
 
-
- 
