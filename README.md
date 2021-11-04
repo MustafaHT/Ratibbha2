@@ -38,7 +38,7 @@ than the requirements needed.
 
 Then, as I finished sketching, I started my work with Figma till I got the last and simplest design. After that, started designing with Android studio where it was a much way harder than Figma, so I've spent more than three nights working on the ideas and design, where the rest of the five nights has been spent in coding. Which I consider it as the biggest mistake during the project process. Because, whether it was a good look or not the user will not care about the design if the app satisfies his needs. 
 
-Later on, during the coding process, I've faced a lot of difficulties such as adding the Calendar and Time dialogue so it can appears with at the same button, so it can ask the user to enter the day that he wants to start his task on, including the startTime and endTime which I used google to help deal with. In addition, dealing with logical errors. 
+Later on, during the coding process, I've faced a lot of difficulties such as adding the Calendar and Time dialogue so it can appears with at the same button, so it can ask the user to enter the day that he wants to start his task on, including the startTime and endTime which I used google to help deal with. In addition, dealing with logical errors either by gitting hints from my colleagues or help from the instructors.  
 
 ======================  List unsolved problems   ========================>>
 
@@ -46,9 +46,13 @@ one of the problems that faced was that the length of the topic as I wanted to m
 
 ======================  Upcoming   ========================>>
 
+- making group 
+
+- soring
+
 - Notification
 
-- Google Map
+- Google Map <Location>
 
 - cloud data base 
 
