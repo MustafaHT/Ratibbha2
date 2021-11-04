@@ -46,9 +46,11 @@ one of the problems that faced was that the length of the topic as I wanted to m
 
 ======================  Upcoming   ========================>>
 
+- search bar
+
 - making group 
 
-- soring
+- soring by<dueTime, dueDate, importance, >
 
 - Notification
 
